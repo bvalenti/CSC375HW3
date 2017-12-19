@@ -43,7 +43,6 @@ public class Main {
         A.grid[850][50] = T;
         A.grid[950][50] = T;
 
-
         TemperatureSolver tp = new TemperatureSolver(0,0,2*size,size,composition,this);
         ForkJoinPool pool = new ForkJoinPool();
         do {
@@ -52,7 +51,7 @@ public class Main {
                     painter.paintSolution(B);
 
                     tlr = ThreadLocalRandom.current().nextInt(1,100);
-                    if (tlr < 2) {
+//                    if (tlr < 2) {
                         B.grid[0][0] = S;
                         B.grid[2 * size - 1][size - 1] = T;
                         B.grid[999][499] = T;
@@ -69,13 +68,13 @@ public class Main {
                         B.grid[750][50] = T;
                         B.grid[850][50] = T;
                         B.grid[950][50] = T;
-                    }
+//                    }
 
                 } else {
                     painter.paintSolution(A);
 
                     tlr = ThreadLocalRandom.current().nextInt(1,100);
-                    if (tlr < 2) {
+//                    if (tlr < 2) {
                         A.grid[0][0] = S;
                         A.grid[2 * size - 1][size - 1] = T;
                         A.grid[999][499] = T;
@@ -92,7 +91,7 @@ public class Main {
                         A.grid[750][50] = T;
                         A.grid[850][50] = T;
                         A.grid[950][50] = T;
-                    }
+//                    }
                 }
             if (state == 0) {
                 state = 1;
@@ -101,7 +100,7 @@ public class Main {
             }
             tp = new TemperatureSolver(0,0,2*size,size,composition,this);
             count++;
-            System.out.println(count);
+            System.out.println("Iteration: " + Integer.toString(count));
         } while (!convergence(B,A) && count < 2000);
         System.out.println("I finished running!");
 
@@ -121,10 +120,8 @@ public class Main {
         }
         if (diff < 0.001) {
             return true;
-        } else if (diff > 300000) {
-            return true;
         }
-        System.out.println(diff);
+        System.out.println("Convergence: " + Double.toString(diff));
         return false;
     }
 }

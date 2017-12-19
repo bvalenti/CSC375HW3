@@ -37,63 +37,63 @@ public class TemperatureSolver extends RecursiveAction {
                         if (i == 0 && j == 0) { //Top left corner
                             newTemp = newTemp
                                     + cs.grid[i+1][j] * composition.grid[i+1][j].percents[k]
-                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/3;
+                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/2;
                         } else if (i == 0 && j == GUI.size-1) { //Bottom left corner
                             newTemp = newTemp
                                     + cs.grid[i+1][j] * composition.grid[i+1][j].percents[k]
-                                    + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/3;
+                                    + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/2;
                         } else if (i == GUI.size*2-1 && j == 0) { //Top right corner
                             newTemp = newTemp
                                     + cs.grid[i-1][j] * composition.grid[i-1][j].percents[k]
-                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/3;
+                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/2;
                         } else if (i == GUI.size*2-1 && j == GUI.size-1) { //Bottom right corner
                             newTemp = newTemp
                                     + cs.grid[i-1][j] * composition.grid[i-1][j].percents[k]
-                                    + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/3;
+                                    + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/2;
                         } else if (i == 0) { //Left side
                             newTemp = newTemp
                                     + cs.grid[i+1][j] * composition.grid[i+1][j].percents[k]
                                     + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k]
-                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/4;
+                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/3;
                         } else if (i == GUI.size*2-1) { //Right side
                             newTemp = newTemp
                                     + cs.grid[i-1][j] * composition.grid[i-1][j].percents[k]
                                     + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k]
-                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/4;
+                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/3;
                         } else if (j == 0) { //Top side
                             newTemp = newTemp
                                     + cs.grid[i-1][j] * composition.grid[i-1][j].percents[k]
                                     + cs.grid[i+1][j] * composition.grid[i+1][j].percents[k]
-                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/4;
+                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/3;
                         } else if (j == GUI.size-1) { //Bottom side
                             newTemp = newTemp
                                     + cs.grid[i-1][j] * composition.grid[i-1][j].percents[k]
                                     + cs.grid[i+1][j] * composition.grid[i+1][j].percents[k]
-                                    + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/4;
+                                    + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/3;
                         } else {
                             newTemp = newTemp
                                     + cs.grid[i-1][j] * composition.grid[i-1][j].percents[k]
                                     + cs.grid[i+1][j] * composition.grid[i+1][j].percents[k]
                                     + cs.grid[i][j-1] * composition.grid[i][j-1].percents[k]
-                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k]
-                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
-                            newTemp = newTemp/5;
+                                    + cs.grid[i][j+1] * composition.grid[i][j+1].percents[k];
+//                                    + cs.grid[i][j] * composition.grid[i][j].percents[k];
+                            newTemp = newTemp/4;
                         }
                         temp = temp + newTemp * composition.C[k];
                     }
